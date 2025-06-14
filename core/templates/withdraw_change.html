@@ -1,0 +1,31 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+    <style type="text/css">
+        .submit-row .deletelink {
+            background: #ba2121;
+        }
+
+        .submit-row .deletelink:focus,
+        .submit-row .deletelink:hover,
+        .submit-row .deletelink:active {
+            background: #a41515;
+        }
+    </style>
+    <div class="submit-row">
+        {% if original.status == 'r' %}
+            <input type="submit" value="Cancel user request" name="_set-cancelled"
+                   onclick="return confirm('You really want to cancel user request?')">
+            <input type="submit" value="Set status to processing" name="_set-processing">
+        {% elif original.status == 'p' %}
+            <input type="submit" value="Cancel user request" name="_set-cancelled"
+                   onclick="return confirm('You really want to cancel user request?')">
+            <input type="submit" value="Set status to complete" name="_set-completed">
+        {% elif original.status == 'd' %}
+            Request is cancelled
+        {% elif original.status == 'c' %}
+            Request is completed
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,154 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  #namespace: qa
+  name: mobile-api
+  labels:
+    app: mobile-api
+    purpose: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mobile-api
+  template:
+    metadata:
+      labels:
+        app: mobile-api
+        purpose: api
+    spec:
+      containers:
+        - image: 826737140156.dkr.ecr.us-east-1.amazonaws.com/fanclash-mobile-api:latest
+          name: mobile-api
+          args: ["server"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: gce-opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+          env:
+            - name: DATABASE_NAME
+              value: "fanclash"
+            - name: DATABASE_USER
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_USER
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_PASSWORD
+            - name: DATABASE_HOST
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_HOST
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                 name: rabbitmq
+                 key: RMQ_PASSWORD
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 8000
+            initialDelaySeconds: 20
+            timeoutSeconds: 5
+          resources:
+            requests:
+              cpu: 10m
+
+        - image: 826737140156.dkr.ecr.us-east-1.amazonaws.com/fanclash-mobile-api:latest
+          name: celery-worker
+          args: ["celery-worker"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: gce-opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+          env:
+            - name: DATABASE_NAME
+              value: "fanclash"
+            - name: DATABASE_USER
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_USER
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_PASSWORD
+            - name: DATABASE_HOST
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_HOST
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                 name: rabbitmq
+                 key: RMQ_PASSWORD
+
+        - image: 826737140156.dkr.ecr.us-east-1.amazonaws.com/fanclash-mobile-api:latest
+          name: celery-beat
+          args: ["celery-beat"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: gce-opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+          env:
+            - name: DATABASE_NAME
+              value: "fanclash"
+            - name: DATABASE_USER
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_USER
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_PASSWORD
+            - name: DATABASE_HOST
+              valueFrom:
+                secretKeyRef:
+                 name: db-creds
+                 key: DATABASE_HOST
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                 name: rabbitmq
+                 key: RMQ_PASSWORD
+                 
+      volumes:
+        - name: cloudsql-oauth-credentials
+          secret:
+            secretName: cloudsql-oauth-credentials
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs
+        - name: cloudsql
+          emptyDir:

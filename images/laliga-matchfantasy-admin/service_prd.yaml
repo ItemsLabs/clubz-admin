@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mobile-api
+  namespace: "prd-fanclash"
+  labels:
+    app: mobile-api
+spec:
+  ports:
+    - port: 80
+      targetPort: 8000
+  selector:
+    app: mobile-api

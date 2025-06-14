@@ -1,0 +1,34 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <div class="card">
+        <div class="card-header">
+            <h1>Assign Card Pack to User</h1>
+        </div>
+        <div class="card-body">
+            {% if form.errors %}
+                <div class="errors">
+                    <p>Please correct the following errors:</p>
+                    <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="form-row">
+                    <button type="submit" class="button button-primary">Assign Card Pack</button>
+                    <a href="{% url 'admin:core_assignedcardpack_changelist' %}" class="button">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,123 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobile-api
+  namespace: "prd-fanclash"
+  labels:
+    app: mobile-api
+    purpose: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mobile-api
+  template:
+    metadata:
+      labels:
+        app: mobile-api
+        purpose: api
+    spec:
+      # imagePullSecrets:
+      # - name: gameon-ams3
+      containers:
+        - image: registry.digitalocean.com/gameon-ams3/laliga-matchfantasy-admin:TAG_PLACEHOLDER
+          imagePullPolicy: IfNotPresent
+          name: mobile-api
+          args: ["server"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - configMapRef:
+                name: rmq-config
+            - configMapRef:
+                name: redis-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: db-creds
+            - secretRef:
+                name: rmq-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: DD_SERVICE_NAME
+              value: "mobile-api"
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 8000
+            initialDelaySeconds: 20
+            timeoutSeconds: 5
+          resources:
+            requests:
+              cpu: 30m
+
+        - image: registry.digitalocean.com/gameon-ams3/laliga-matchfantasy-admin:TAG_PLACEHOLDER
+          imagePullPolicy: IfNotPresent
+          name: celery-worker
+          args: ["celery-worker"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - configMapRef:
+                name: rmq-config
+            - configMapRef:
+                name: redis-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: db-creds
+            - secretRef:
+                name: rmq-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: DD_SERVICE_NAME
+              value: "celery-worker"
+
+        - image: registry.digitalocean.com/gameon-ams3/laliga-matchfantasy-admin:TAG_PLACEHOLDER
+          imagePullPolicy: IfNotPresent
+          name: celery-beat
+          args: ["celery-beat"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - configMapRef:
+                name: rmq-config
+            - configMapRef:
+                name: redis-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: db-creds
+            - secretRef:
+                name: rmq-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: DD_SERVICE_NAME
+              value: "celery-beat"
+      volumes:
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs

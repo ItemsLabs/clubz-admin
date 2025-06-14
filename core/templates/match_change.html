@@ -1,0 +1,21 @@
+{% extends 'admin/change_form.html' %}
+
+{% block after_field_sets %}
+    {{ block.super }}
+    <h3>Example:</h3>
+    <ul>
+        <li><b>Min Position:</b> 1, <b>Max Position:</b> 1, <b>Amount:</b> 5 (params for first position on leaderboard)</li>
+        <li><b>Min Position:</b> 2, <b>Max Position:</b> 2, <b>Amount:</b> 4 (params for second position on leaderboard)</li>
+        <li><b>Min Position:</b> 3, <b>Max Position:</b> 3, <b>Amount:</b> 3 (params for third position on leaderboard)</li>
+        <li><b>Min Position:</b> 4, <b>Max Position:</b> 7, <b>Amount:</b> 2 (params for fourth to seventh positions on leaderboard)</li>
+        <li><b>Min Position:</b> 8, <b>Max Position:</b> (Leave blank), <b>Amount:</b> 1 (params for eighth to last positions on leaderboard)</li>
+    </ul>
+{% endblock %}
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+    <div class="submit-row">
+        <input type="submit" value="Start 10 min sim" name="_start-short-simulation">
+        <input type="submit" value="Start 90 min sim" name="_start-long-simulation">
+    </div>
+{% endblock %}

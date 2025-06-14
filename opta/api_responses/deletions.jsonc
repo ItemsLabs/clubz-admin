@@ -1,0 +1,65 @@
+/*
+https://api.performfeeds.com/soccerdata/deletions/q02ii69ggwg21k9rlo9at21g7?_rt=b&_fmt=json&type=person
+*/
+{
+    "type": "person",
+    "entity": [
+        {
+            "id": "cx0qxa3tbze5dr36oorshah3o",
+            "opId": "583744",
+            "ocId": "846950",
+            "deletionTime": "2024-02-23T20:02:50Z",
+            "lastUpdated": "2024-02-23T19:54:57Z"
+        },
+        {
+            "id": "5j11z7b4diwd8o44vj9apocgk",
+            "opId": "648169",
+            "ocId": "951115",
+            "deletionTime": "2024-02-22T00:20:57Z",
+            "lastUpdated": "2024-02-18T20:31:59Z"
+        },
+        {
+            "id": "bz3feyxyt68s07pvq4olbmc5w",
+            "ocId": "938026",
+            "deletionTime": "2024-02-21T23:43:08Z",
+            "lastUpdated": "2024-02-21T23:42:12Z"
+        },
+        {
+            "id": "4xta77p6216he37fojvl7zfv8",
+            "ocId": "952580",
+            "deletionTime": "2024-02-21T23:20:37Z",
+            "lastUpdated": "2024-02-20T01:31:46Z"
+        },
+        {
+            "id": "3ai567bs32hpam9s7nmeiu044",
+            "opId": "614545",
+            "ocId": "896992",
+            "deletionTime": "2024-02-21T21:34:02Z",
+            "lastUpdated": "2024-02-21T21:16:19Z"
+        },
+        {
+            "id": "6l3t7q9d0rtw0j7cegerboyc",
+            "ocId": "947805",
+            "deletionTime": "2024-02-20T22:16:04Z",
+            "lastUpdated": "2024-02-20T13:17:49Z"
+        },
+        {
+            "id": "1fa2bu4cmz9452wlcrduhegwk",
+            "ocId": "949192",
+            "deletionTime": "2024-02-20T21:43:40Z",
+            "lastUpdated": "2024-02-14T07:01:53Z"
+        },
+        {
+            "id": "2bc1asjpvy0mpypwlx3x7w0lw",
+            "ocId": "949191",
+            "deletionTime": "2024-02-20T21:21:38Z",
+            "lastUpdated": "2024-01-26T10:18:55Z"
+        },
+        {
+            "id": "euon7nd0nf480fvwev7rd5s0k",
+            "ocId": "948395",
+            "deletionTime": "2024-02-20T21:17:50Z",
+            "lastUpdated": "2024-02-14T07:01:53Z"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+/*
+https://api.performfeeds.com/soccerdata/matchstats/q02ii69ggwg21k9rlo9at21g7/{fixtureUuid}?_rt=b&_fmt=json
+https://api.performfeeds.com/soccerdata/matchstats/q02ii69ggwg21k9rlo9at21g7/279xxq1iifv4qxaac0tgso0t0?_rt=b&_fmt=json
+*/
+{
+    "matchInfo": {
+        "id": "279xxq1iifv4qxaac0tgso0t0",
+        "coverageLevel": "15",
+        "date": "2024-05-26Z",
+        "time": "",
+        "week": "38",
+        "numberOfPeriods": 2,
+        "periodLength": 45,
+        "lastUpdated": "2024-02-15T10:37:38Z",
+        "description": "Las Palmas vs Deportivo Alavés",
+        "sport": {
+            "id": "289u5typ3vp4ifwh5thalohmq",
+            "name": "Soccer"
+        },
+        "ruleset": {
+            "id": "79plas4983031idr6vw83nuel",
+            "name": "Men"
+        },
+        "competition": {
+            "id": "34pl8szyvrbwcmfkuocjm3r6t",
+            "name": "Primera División",
+            "knownName": "Spanish La Liga",
+            "sponsorName": "LALIGA EA SPORTS",
+            "competitionCode": "PRD",
+            "competitionFormat": "Domestic league",
+            "country": {
+                "id": "49ih1pwv3ahshdf8uzrimi54c",
+                "name": "Spain"
+            }
+        },
+        "tournamentCalendar": {
+            "id": "48s5gykssujtl4derer2njfv8",
+            "startDate": "2023-08-11Z",
+            "endDate": "2024-05-26Z",
+            "name": "2023/2024"
+        },
+        "stage": {
+            "id": "49d7kwlzobzuyja3x2bzwe3o4",
+            "formatId": "e2q01r9o9jwiq1fls93d1sslx",
+            "startDate": "2023-08-11Z",
+            "endDate": "2024-05-26Z",
+            "name": "Regular Season"
+        },
+        "contestant": [
+            {
+                "id": "1ae3awgwm3i1jds5tfct5441j",
+                "name": "Las Palmas",
+                "shortName": "Las Palmas",
+                "officialName": "UD Las Palmas",
+                "code": "LPM",
+                "position": "home",
+                "country": {
+                    "id": "49ih1pwv3ahshdf8uzrimi54c",
+                    "name": "Spain"
+                }
+            },
+            {
+                "id": "4dtdjgnpdq9uw4sdutti0vaar",
+                "name": "Deportivo Alavés",
+                "shortName": "Alavés",
+                "officialName": "Deportivo Alavés",
+                "code": "ALA",
+                "position": "away",
+                "country": {
+                    "id": "49ih1pwv3ahshdf8uzrimi54c",
+                    "name": "Spain"
+                }
+            }
+        ],
+        "venue": {
+            "id": "51rz2fp2i3mhe3vd7avmchpd8",
+            "neutral": "no",
+            "longName": "Estadio de Gran Canaria",
+            "shortName": "Estadio de Gran Canaria"
+        }
+    },
+    "liveData": {
+        "matchDetails": {
+            "periodId": 16,
+            "matchStatus": "Fixture"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div class="module">
+    <h1>Send Notification</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            {{ form.title.errors }}
+            <label for="id_title">Title:</label>
+            {{ form.title }}
+        </div>
+        <div class="form-row">
+            {{ form.message.errors }}
+            <label for="id_message">Message:</label>
+            {{ form.message }}
+        </div>
+        <div class="form-row">
+            {{ form.user_ids.errors }}
+            <label for="id_user_ids">User IDs (comma-separated):</label>
+            {{ form.user_ids }}
+        </div>
+        <div class="form-row">
+            <button type="submit">Send Notifications</button>
+            <button onclick="window.history.back()">Back</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

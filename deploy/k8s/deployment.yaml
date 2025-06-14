@@ -1,0 +1,143 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: NAMESPACE
+  name: mobile-api
+  labels:
+    app: mobile-api
+    purpose: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mobile-api
+  template:
+    metadata:
+      labels:
+        app: mobile-api
+        purpose: api
+    spec:
+      containers:
+        - image: gcr.io/PROJECT_ID/mobile-api:BUILD_VERSION
+          name: mobile-api
+          args: ["server"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - secretRef:
+                name: database-creds
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: gce-opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-NAMESPACE
+                  key: rabbitmq-password
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 8000
+            initialDelaySeconds: 20
+            timeoutSeconds: 5
+          resources:
+            requests:
+              cpu: 10m
+
+        - image: gcr.io/PROJECT_ID/mobile-api:BUILD_VERSION
+          name: celery-worker
+          args: ["celery-worker"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - secretRef:
+                name: database-creds
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: gce-opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-NAMESPACE
+                  key: rabbitmq-password
+
+        - image: gcr.io/PROJECT_ID/mobile-api:BUILD_VERSION
+          name: celery-beat
+          args: ["celery-beat"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - secretRef:
+                name: database-creds
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: gce-opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-NAMESPACE
+                  key: rabbitmq-password
+
+        - image: b.gcr.io/cloudsql-docker/gce-proxy:1.17
+          name: cloudsql-proxy
+          command: ["/cloud_sql_proxy", "--dir=/cloudsql",
+                    "-instances=CLOUD_SQL_INSTANCE_ID=tcp:5432",
+                    "-credential_file=/secrets/cloudsql/credentials.json"]
+          volumeMounts:
+            - name: cloudsql-oauth-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+            - name: ssl-certs
+              mountPath: /etc/ssl/certs
+            - name: cloudsql
+              mountPath: /cloudsql
+      volumes:
+        - name: cloudsql-oauth-credentials
+          secret:
+            secretName: cloudsql-oauth-credentials
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs
+        - name: cloudsql
+          emptyDir:
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: NAMESPACE
+  name: mobile-api
+  labels:
+    app: mobile-api
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 8000
+  selector:
+    app: mobile-api

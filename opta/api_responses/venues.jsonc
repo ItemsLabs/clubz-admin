@@ -1,0 +1,496 @@
+/*
+https://api.performfeeds.com/soccerdata/venues/q02ii69ggwg21k9rlo9at21g7?_rt=b&_fmt=json&tmcl={tournamentCalendarUuid}
+https://api.performfeeds.com/soccerdata/venues/q02ii69ggwg21k9rlo9at21g7?_rt=b&_fmt=json&tmcl=48s5gykssujtl4derer2njfv8
+*/
+{
+    "lastUpdated": "2024-02-09T14:05:15Z",
+    "venue": [
+        {
+            "id": "7o6sbdki1c1b3f54ga3xj5abb",
+            "name": "Estadio Santiago Bernabéu",
+            "city": "Madrid",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Avenida de Concha Espina 1, Chamartín",
+            "opened": 1947,
+            "capacity": 85454,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "40.453068279",
+            "mapsGeoCodeLongitude": "-3.688353896",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "3kq9cckrnlogidldtdie2fkbl",
+                    "clubName": "Real Madrid",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "d9i7k0es5x4ccxcapt1fcg9c2",
+            "name": "Estadio de la Cerámica",
+            "city": "Villarreal",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Plaza Labrador",
+            "opened": 1923,
+            "capacity": 24500,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "39.944119181",
+            "mapsGeoCodeLongitude": "-0.103474259",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "74mcjsm72vr3l9pw2i4qfjchj",
+                    "clubName": "Villarreal",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "3ahxyb4q6fwsr6woc83qp7hed",
+            "name": "Estadi Olímpic Lluís Companys",
+            "city": "Barcelona",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Carrer de l'Estadi",
+            "opened": 1929,
+            "capacity": 55926,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "41.364755566",
+            "mapsGeoCodeLongitude": "2.155573368",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "agh9ifb2mw3ivjusgedj7c3fe",
+                    "clubName": "Barcelona",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "8ell9vv21ntqufsr5a4qyvjlg",
+            "name": "Estadio de Mestalla",
+            "city": "Valencia",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Avenida de Suecia",
+            "opened": 1923,
+            "capacity": 55000,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "39.474601503",
+            "mapsGeoCodeLongitude": "-0.358257294",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "ba5e91hjacvma2sjvixn00pjo",
+                    "clubName": "Valencia",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "awbbogt2i6macegd87pre8044",
+            "name": "Estadi Mallorca Son Moix",
+            "city": "Palma de Mallorca",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Camí dels Reis",
+            "opened": 1999,
+            "capacity": 26020,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "39.589939598",
+            "mapsGeoCodeLongitude": "2.630077600",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "50x1m4u58lffhq6v6ga1hbxmy",
+                    "clubName": "Mallorca",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "81guly6ecfrnsu6pfs0qqb1ik",
+            "name": "Estadio Ramón Sánchez Pizjuán",
+            "city": "Sevilla",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Avenida de Eduardo Dato",
+            "opened": 1958,
+            "capacity": 48649,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "37.384045627",
+            "mapsGeoCodeLongitude": "-5.970591903",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "10eyb18v5puw4ez03ocaug09m",
+                    "clubName": "Sevilla",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "db9wysa0fadbruz7xv4kgsbgu",
+            "name": "Power Horse Stadium",
+            "city": "Almería",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Calle de Belladona",
+            "opened": 2004,
+            "capacity": 18331,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "36.840038861",
+            "mapsGeoCodeLongitude": "-2.435456514",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "cobffe32r7g4skka9m19qib63",
+                    "clubName": "Almería",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "4ydszy39adhtczo02as8gdqup",
+            "name": "Estadio Coliseum",
+            "city": "Getafe",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Avenida de Teresa de Calcuta",
+            "opened": 1998,
+            "capacity": 17393,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "40.325728646",
+            "mapsGeoCodeLongitude": "-3.714964092",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "1n1j0wsl763lq7ee1k0c11c02",
+                    "clubName": "Getafe",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "23fwsofybpbwfcxjrysy6on19",
+            "name": "Estadio El Sadar",
+            "city": "Pamplona (Iruñea)",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Carretera El Sadar",
+            "opened": 1967,
+            "capacity": 23576,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "42.796676994",
+            "mapsGeoCodeLongitude": "-1.637141258",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "2l0ldgiwsgb8d6y3z0sfgjzyj",
+                    "clubName": "Osasuna",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "a49b01dcsa1ntf00op34hr64o",
+            "name": "Estadio Nuevo Mirandilla",
+            "city": "Cádiz",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Plaza de Madrid",
+            "opened": 1955,
+            "capacity": 22000,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "36.502551731",
+            "mapsGeoCodeLongitude": "-6.272941232",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "82q9159y2u7mkfn3z6hy75r4o",
+                    "clubName": "Cádiz",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "8z6nwwiy8h2kqq7z3yxf7aqti",
+            "name": "Abanca-Balaídos",
+            "city": "Vigo",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Avenida de Balaídos",
+            "opened": 1928,
+            "capacity": 24791,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "42.211851813",
+            "mapsGeoCodeLongitude": "-8.739720583",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "6f27yvbqcngegwsg2ozxxdj4",
+                    "clubName": "Celta de Vigo",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "3y2qrs9lma04q7tntobgey3s8",
+            "name": "Estadi Municipal de Montilivi",
+            "city": "Girona",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Avenida Montlivi 141",
+            "opened": 1970,
+            "capacity": 14500,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "41.961195406",
+            "mapsGeoCodeLongitude": "2.828495353",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "7h7eg7q7dbwvzww78h9d5eh0h",
+                    "clubName": "Girona",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "51rz2fp2i3mhe3vd7avmchpd8",
+            "name": "Estadio de Gran Canaria",
+            "city": "Las Palmas de Gran Canaria",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Avenida Pío XII 29",
+            "opened": 2003,
+            "capacity": 32392,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "28.100362345",
+            "mapsGeoCodeLongitude": "-15.456706882",
+            "timeZone": "Atlantic/Canary",
+            "contestant": [
+                {
+                    "id": "1ae3awgwm3i1jds5tfct5441j",
+                    "clubName": "Las Palmas",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "6wek5bab1al0qtnl6pjyntp42",
+            "name": "Estadio de Vallecas",
+            "city": "Madrid",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Calle Payaso Fofó",
+            "opened": 1976,
+            "capacity": 15500,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "40.391822825",
+            "mapsGeoCodeLongitude": "-3.658589423",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "3budh3j9xivsid3ptm8ptpy4k",
+                    "clubName": "Rayo Vallecano",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "a7seakd3sc1cf9nbxfrlgj4o",
+            "name": "Estadio Benito Villamarín",
+            "city": "Sevilla",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Avenida de Heliópolis",
+            "opened": 1929,
+            "capacity": 60721,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "37.356449523",
+            "mapsGeoCodeLongitude": "-5.981776714",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "ah8dala7suqqkj04n2l8xz4zd",
+                    "clubName": "Real Betis",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "bpfd0sk353ozrgi4jrjs5qgqs",
+            "name": "Reale Arena",
+            "city": "Donostia-San Sebastián",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Paseo de Anoeta 1",
+            "opened": 1993,
+            "capacity": 40000,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "43.301375816",
+            "mapsGeoCodeLongitude": "-1.973601580",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "63f5h8t5e9qm1fqmvfkb23ghh",
+                    "clubName": "Real Sociedad",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "26ycul6lcermwam7oxr57qyny",
+            "name": "Estadio de Mendizorroza",
+            "city": "Vitoria-Gasteiz",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Paseo de Cervantes",
+            "opened": 1924,
+            "capacity": 19840,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "42.837076242",
+            "mapsGeoCodeLongitude": "-2.688246667",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "4dtdjgnpdq9uw4sdutti0vaar",
+                    "clubName": "Deportivo Alavés",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "5vi823w1xbyl2zofc31za3o3x",
+            "name": "Estadio Nuevo Los Cármenes",
+            "city": "Granada",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Calle Pintor Manuel Maldonado",
+            "opened": 1995,
+            "capacity": 22524,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "37.152945803",
+            "mapsGeoCodeLongitude": "-3.595737219",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "26fes5ubaeq0fk1nay2pj2ob2",
+                    "clubName": "Granada",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "3tsyaiz1y1gg31xw81qgtrx4w",
+            "name": "San Mamés Barria",
+            "city": "Bilbao",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Rafael Moreno Pitxitxi Kalea",
+            "opened": 2013,
+            "capacity": 53289,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "43.264172789",
+            "mapsGeoCodeLongitude": "-2.949383125",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "3czravw89omgc9o4s0w3l1bg5",
+                    "clubName": "Athletic Club",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                }
+            ]
+        },
+        {
+            "id": "4dki5bxv1ttz1c9vkeifguc45",
+            "name": "Estádio Cívitas Metropolitano",
+            "city": "Madrid",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "country": "Spain",
+            "countryCode": "ESP",
+            "address": "Rosas",
+            "opened": 1994,
+            "capacity": 70460,
+            "surface": "grass",
+            "mapsGeoCodeLatitude": "40.436225928",
+            "mapsGeoCodeLongitude": "-3.599460125",
+            "timeZone": "Europe/Madrid",
+            "contestant": [
+                {
+                    "id": "4ku8o6uf87yd8iecdalipo6wd",
+                    "clubName": "Atlético Madrid",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "yes"
+                },
+                {
+                    "id": "1n1j0wsl763lq7ee1k0c11c02",
+                    "clubName": "Getafe",
+                    "type": "club",
+                    "teamType": "men",
+                    "primary": "no"
+                }
+            ]
+        }
+    ]
+}

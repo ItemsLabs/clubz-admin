@@ -1,0 +1,130 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobile-api
+  labels:
+    app: mobile-api
+    purpose: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mobile-api
+  template:
+    metadata:
+      labels:
+        app: mobile-api
+        purpose: api
+    spec:
+      containers:
+        - image: registry.digitalocean.com/fanclash/fanclash-admin:1.6
+          name: mobile-api
+          args: ["server"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - configMapRef:
+                name: rmq-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: db-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: RMQ_USER
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-cluster-default-user
+                  key: username
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-cluster-default-user
+                  key: password
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 8000
+            initialDelaySeconds: 20
+            timeoutSeconds: 5
+          resources:
+            requests:
+              cpu: 10m
+
+        - image: registry.digitalocean.com/fanclash/fanclash-admin:1.6
+          name: celery-worker
+          args: ["celery-worker"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - configMapRef:
+                name: rmq-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: db-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: RMQ_USER
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-cluster-default-user
+                  key: username
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-cluster-default-user
+                  key: password
+
+        - image: registry.digitalocean.com/fanclash/fanclash-admin:1.6
+          name: celery-beat
+          args: ["celery-beat"]
+          envFrom:
+            - configMapRef:
+                name: fanclash-config
+            - configMapRef:
+                name: mobile-api-config
+            - configMapRef:
+                name: rmq-config
+            - secretRef:
+                name: fcm-creds
+            - secretRef:
+                name: opta-feed-creds
+            - secretRef:
+                name: ortec-creds
+            - secretRef:
+                name: db-creds
+            - secretRef:
+                name: do-api-creds
+          env:
+            - name: RMQ_USER
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-cluster-default-user
+                  key: username
+            - name: RMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-cluster-default-user
+                  key: password
+
+      volumes:
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs

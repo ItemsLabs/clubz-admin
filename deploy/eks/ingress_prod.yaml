@@ -1,0 +1,28 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  #namespace: qa
+  name: "fanclash-admin-ingress"
+  labels:
+    app: "mobile-api"
+  annotations:
+    kubernetes.io/ingress.class: "alb"
+    
+    alb.ingress.kubernetes.io/scheme: "internet-facing"
+    #lb.ingress.kubernetes.io/security-groups: sg-031798cf178a55251
+    #alb.ingress.kubernetes.io/subnets: subnet-0f88e514bb691b944, subnet-023b9581a2914cc85, subnet-033dc7a1bc601322b
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:826737140156:certificate/a6916a38-9e1d-44a9-8632-77c1c8b8bc66
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80,"HTTPS": 443}]'
+
+    alb.ingress.kubernetes.io/healthcheck-path: "/"
+    alb.ingress.kubernetes.io/success-codes: "200,404,400"
+spec:
+  # forward all requests to nginx-ingress-controller
+  rules:
+  - http:
+      paths:
+      - path: "/*"
+        backend:
+          serviceName: "mobile-api"
+          servicePort: 80

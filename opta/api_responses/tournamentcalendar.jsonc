@@ -1,0 +1,38 @@
+/*
+https://api.performfeeds.com/soccerdata/tournamentcalendar/q02ii69ggwg21k9rlo9at21g7/active/authorized?_rt=b&_fmt=json
+*/
+{
+    "competition": [
+        {
+            "id": "34pl8szyvrbwcmfkuocjm3r6t",
+            "ocId": "7",
+            "opId": "23",
+            "name": "Primera División",
+            "knownName": "Spanish La Liga",
+            "competitionCode": "PRD",
+            "displayOrder": 10,
+            "country": "Spain",
+            "countryId": "49ih1pwv3ahshdf8uzrimi54c",
+            "countryCode": "ESP",
+            "isFriendly": "no",
+            "competitionFormat": "Domestic league",
+            "type": "men",
+            "tournamentCalendar": [
+                {
+                    "id": "48s5gykssujtl4derer2njfv8",
+                    "includesVenues": "yes",
+                    "ocId": "23593",
+                    "name": "2023/2024",
+                    "startDate": "2023-08-11Z",
+                    "endDate": "2024-05-26Z",
+                    "active": "yes",
+                    "lastUpdated": "2024-01-19T16:39:17Z",
+                    "includesStandings": "yes"
+                }
+            ],
+            "competitionType": "club",
+            "sponsorName": "LALIGA EA SPORTS"
+        }
+    ],
+    "lastUpdated": "2024-01-19T15:39:19Z"
+}
