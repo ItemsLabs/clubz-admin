@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "65r&%#$ocukd68u^&v+g=u%q%)u5v4#sp70ac-wz@9nnrl$wbz"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "65r&%#$ocukd68u^&v+g=u%q%)u5v4#sp70ac-wz@9nnrl$wbz")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -98,7 +98,7 @@ DATABASES = {
         "PASSWORD": os.getenv("DATABASE_PASSWORD"),
         "HOST": os.getenv("DATABASE_HOST"),
         "PORT": os.getenv("DATABASE_PORT", "5432"),
-        "OPTIONS": {"sslmode": os.getenv("DATABASE_SSLMODE", "disabled")},
+        "OPTIONS": {"sslmode": os.getenv("DATABASE_SSLMODE", "require")},
     }
 }
 
